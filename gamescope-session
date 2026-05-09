@@ -1,0 +1,31 @@
+#!/bin/bash
+pipewire &
+PIPEWIRE_PID=$!
+
+for arg in "$@"; do
+  case "$arg" in
+    --hdr-*)
+      export PROTON_ENABLE_HDR=1
+      break
+      ;;
+  esac
+done
+
+# Performance
+export MESA_VK_WSI_PRESENT_MODE=mailbox
+export STEAM_MULTIPLE_XWAYLANDS=1
+export QT_QPA_PLATFORM=xcb
+
+STEAM_CMD="steam -gamepadui"
+
+dbus-run-session gamescope \
+  -e \
+  --backend drm \
+  --adaptive-sync \
+  --hide-cursor-delay 99999 \
+  --xwayland-count 2 \
+  --mangoapp \
+  "$@" \
+  -- bash -c "$STEAM_CMD" > "$HOME/gamescope-session.log" 2>&1
+
+kill "$PIPEWIRE_PID" 2>/dev/null

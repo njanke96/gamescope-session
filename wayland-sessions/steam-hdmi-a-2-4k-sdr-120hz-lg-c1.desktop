@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Steam (HDMI-A-2 4k 120Hz SDR)
+Comment=Run Steam directly in Gamescope
+Exec=gamescope-session -r 120 -O HDMI-A-2 -W 3840 -H 2160
+Type=Application
+DesktopNames=gamescope

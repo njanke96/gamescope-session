@@ -1,0 +1,13 @@
+#!/bin/bash
+
+export PROTON_ENABLE_WAYLAND=1
+
+STEAM_CMD="steam -gamepadui"
+
+gamescope \
+  -e \
+  --expose-wayland \
+  -g \
+  --force-grab-cursor \
+  "$@" \
+  -- bash -c "$STEAM_CMD" > "$HOME/gamescope-session.log" 2>&1
