@@ -18,3 +18,8 @@ Gamescope session launch. I don't have user services so it manually starts pipew
 ### wayland-sessions
 
 The .desktop files for Wayland sessions I use with `gamescope-session`
+
+### kill-steam.desktop
+
+This is a workaround for "Return to Desktop" in steam bigpicture causes the process to hang when steam was started with `-gamepadui`.
+Add "Kill Steam" as a non-steam game to properly exit steam from the `gamescope-session` or `gamescope-bigpicture`.

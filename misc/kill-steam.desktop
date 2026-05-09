@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Kill Steam
+Comment=Gracefully shut down Steam processes
+Exec=bash -c "pgrep -u $USER -f steam | xargs kill"
+Icon=system-shutdown
+Terminal=false
+Type=Application
+Categories=Utility;
