@@ -25,7 +25,6 @@ dbus-run-session gamescope \
   --adaptive-sync \
   --hide-cursor-delay 99999 \
   --xwayland-count 2 \
-  --mangoapp \
   "$@" \
   -- bash -c "$STEAM_CMD" > "$HOME/gamescope-session.log" 2>&1
 
