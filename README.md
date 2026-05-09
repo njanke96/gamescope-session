@@ -17,7 +17,8 @@ Gamescope session launch. I don't have user services so it manually starts pipew
 
 ### wayland-sessions
 
-The .desktop files for Wayland sessions I use with `gamescope-session`
+The .desktop files for Wayland sessions I use with `gamescope-session`. They are rather specific to my output connectors and devices and anyone who comes across
+this and want's to use them should adapt these to their own needs.
 
 ### kill-steam.desktop
 
