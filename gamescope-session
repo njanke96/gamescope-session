@@ -13,7 +13,6 @@ for arg in "$@"; do
 done
 
 # Performance
-export MESA_VK_WSI_PRESENT_MODE=mailbox
 export STEAM_MULTIPLE_XWAYLANDS=1
 export QT_QPA_PLATFORM=xcb
 
@@ -21,8 +20,8 @@ STEAM_CMD="steam -gamepadui"
 
 dbus-run-session gamescope \
   -e \
+  --prefer-vk-device 1002:1638 \
   --backend drm \
-  --adaptive-sync \
   --hide-cursor-delay 99999 \
   --xwayland-count 2 \
   "$@" \
