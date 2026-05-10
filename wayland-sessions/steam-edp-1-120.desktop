@@ -1,7 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=Steam (DP-1 120Hz)
+Name=Steam (eDP-1 120Hz)
 Comment=Run Steam directly in Gamescope
-Exec=gamescope-session -r 120 -O DP-1
+Exec=gamescope-session -r 120 -O eDP-1
 Type=Application
 DesktopNames=gamescope
