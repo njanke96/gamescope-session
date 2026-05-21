@@ -9,11 +9,11 @@ My gamescope session scripts and desktop files (used in Void Linux)
 
 ### gamescope-bigpicture
 
-Script to launch Steam Big Picture nested in gamescope within an X11/Wayland session. Best for when running other applications like Discord or when alt-tabbing to a Desktop is needed.
+Script to launch Steam Big Picture nested in gamescope within an X11/Wayland session. Best for when running other applications like Discord or when alt-tabbing to a Desktop is needed. Launches [steam-controller-dsu](https://github.com/njanke96/steam-controller-dsu) with defaults if it is installed.
 
 ### gamesope-session
 
-Gamescope session launch. I don't have user services so it manually starts pipewire and a dbus session.
+Gamescope session launch. I don't have user services so it manually starts pipewire and a dbus session. Also launches [steam-controller-dsu](https://github.com/njanke96/steam-controller-dsu) with defaults if it is installed.
 
 ### wayland-sessions
 
