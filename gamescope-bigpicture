@@ -16,7 +16,6 @@ gamescope \
   -e \
   -g \
   --expose-wayland \
-  --adaptive-sync \
   --force-grab-cursor \
   "$@" \
   -- bash -c "$STEAM_CMD" > "$HOME/gamescope-session.log" 2>&1
