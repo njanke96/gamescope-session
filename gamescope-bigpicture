@@ -5,14 +5,18 @@ STEAM_CMD="steam -gamepadui"
 if command -v steam-controller-dsu &>/dev/null; then
     steam-controller-dsu &> "$HOME/steam-controller-dsu.log" &
     scdsu_pid=$!
-    echo "Running as PID $scdsu_pid"
+    echo "steam-controller-dsu running as PID $scdsu_pid"
 fi
 
 trap '[ -n "$scdsu_pid" ] && kill "$scdsu_pid"' EXIT
 
+export PROTON_ENABLE_WAYLAND=1
+
 gamescope \
   -e \
   -g \
+  --expose-wayland \
+  --adaptive-sync \
   --force-grab-cursor \
   "$@" \
   -- bash -c "$STEAM_CMD" > "$HOME/gamescope-session.log" 2>&1
