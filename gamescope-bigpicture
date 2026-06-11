@@ -1,7 +1,5 @@
 #!/bin/bash
 
-STEAM_CMD="steam -gamepadui"
-
 if command -v steam-controller-dsu &>/dev/null; then
     steam-controller-dsu &> "$HOME/steam-controller-dsu.log" &
     scdsu_pid=$!
@@ -10,7 +8,11 @@ fi
 
 trap '[ -n "$scdsu_pid" ] && kill "$scdsu_pid"' EXIT
 
-export PROTON_ENABLE_WAYLAND=1
+# Prefer X11
+export PROTON_ENABLE_WAYLAND=0
+export QT_QPA_PLATFORM=xcb
+
+STEAM_CMD="steam -gamepadui"
 
 gamescope \
   -e \
