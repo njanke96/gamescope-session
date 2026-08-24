@@ -11,6 +11,7 @@ trap '[ -n "$scdsu_pid" ] && kill "$scdsu_pid"' EXIT
 # Prefer X11
 export PROTON_ENABLE_WAYLAND=0
 export QT_QPA_PLATFORM=xcb
+export SDL_VIDEODRIVER=x11
 
 STEAM_CMD="steam -gamepadui"
 

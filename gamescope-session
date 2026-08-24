@@ -11,6 +11,12 @@ fi
 
 trap '[ -n "$scdsu_pid" ] && kill "$scdsu_pid"' EXIT
 
+# XDG
+export XDG_CONFIG_DIRS=/etc/xdg
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$HOME/.local/share
+
 # Prefer X11
 export PROTON_ENABLE_WAYLAND=0
 export QT_QPA_PLATFORM=xcb
@@ -24,7 +30,6 @@ STEAM_CMD="steam -gamepadui"
 dbus-run-session gamescope \
   -e \
   --backend drm \
-  --adaptive-sync \
   --hide-cursor-delay 99999 \
   --xwayland-count 2 \
   "$@" \
