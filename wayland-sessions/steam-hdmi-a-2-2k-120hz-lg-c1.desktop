@@ -2,6 +2,6 @@
 Encoding=UTF-8
 Name=Steam (HDMI-A-2 2k 120Hz LG C1 HDR)
 Comment=Run Steam directly in Gamescope
-Exec=gamescope-session -r 120 -O HDMI-A-2 -W 2560 -H 1440 --hdr-enabled --hdr-itm-enable --hdr-itm-target-nits 800
+Exec=gamescope-session -r 120 --adaptive-sync -O HDMI-A-2 -W 2560 -H 1440 --hdr-enabled --hdr-itm-enable --hdr-itm-target-nits 800
 Type=Application
 DesktopNames=gamescope
