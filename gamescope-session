@@ -17,10 +17,11 @@ export XDG_CACHE_HOME=$HOME/.cache
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
 
-# Prefer X11
+# Prefer X11 clients
 export PROTON_ENABLE_WAYLAND=0
 export QT_QPA_PLATFORM=xcb
 export SDL_VIDEODRIVER=x11
+export SDL_VIDEO_DRIVER=x11
 
 # For --xwayland-count
 export STEAM_MULTIPLE_XWAYLANDS=1
