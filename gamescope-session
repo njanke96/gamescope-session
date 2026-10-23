@@ -3,18 +3,28 @@ pgrep pipewire | xargs kill 2>/dev/null
 
 pipewire > /dev/null 2>&1 &
 
-for arg in "$@"; do
-  case "$arg" in
-    --hdr-*)
-      export PROTON_ENABLE_HDR=1
-      break
-      ;;
-  esac
-done
+if command -v steam-controller-dsu &>/dev/null; then
+    steam-controller-dsu &> "$HOME/steam-controller-dsu.log" &
+    scdsu_pid=$!
+    echo "steam-controller-dsu running as PID $scdsu_pid"
+fi
 
-# Performance
-export STEAM_MULTIPLE_XWAYLANDS=1
+trap '[ -n "$scdsu_pid" ] && kill "$scdsu_pid"' EXIT
+
+# XDG
+export XDG_CONFIG_DIRS=/etc/xdg
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$HOME/.local/share
+
+# Prefer X11 clients
+export PROTON_ENABLE_WAYLAND=0
 export QT_QPA_PLATFORM=xcb
+export SDL_VIDEODRIVER=x11
+export SDL_VIDEO_DRIVER=x11
+
+# For --xwayland-count
+export STEAM_MULTIPLE_XWAYLANDS=1
 
 STEAM_CMD="steam -gamepadui"
 
